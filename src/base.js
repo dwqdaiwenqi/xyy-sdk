@@ -260,7 +260,14 @@ sdk.sendchats = function(serverid,rolename,servername,channel,channelname,ouid,c
 
     })
 }
-
+/**
+ *
+ *
+ * @param {*} uid
+ * @param {*} gid
+ * @param {*} sid
+ * @param {*} roleid
+ */
 sdk.sendrole = function(uid,gid,sid,roleid){
     var msg={};
     window.parent.postMessage({
@@ -271,6 +278,31 @@ sdk.sendrole = function(uid,gid,sid,roleid){
         roleid:roleid
     },"*")
 };
+
+/**
+ *
+ *
+ * @param {Number} uid 用户id
+ * @param {Number} sid 区服id
+ * @param {String} role 角色名
+ * @param {Number} roleId 角色id
+ * @param {String} sname 不必须 区服名
+ * @param {Number} level 不必须 角色等级
+ * @param {string} job 不必须 职业
+ */
+sdk.upgrade = function(uid,sid,role,roleId,sname,level,job=''){
+    var msg={};
+    window.parent.postMessage({
+        cmd:'upgrade',
+        uid:uid,
+        server:sid,
+        role:role,
+        roleId:roleId,
+        sname:sname||'',
+        level:level||'',
+        job
+    },"*")
+}
 
 //创角统计
 sdk.createPlayer = function(uid,server,role,roleId,job=''){
@@ -299,30 +331,7 @@ sdk.loginGameData = function(uid,gid,sid,roleid,rolename,job=''){
         'error': function (data) {},
     });
 };
-/**
- *
- *
- * @param {Number} uid 用户id
- * @param {Number} sid 区服id
- * @param {String} role 角色名
- * @param {Number} roleId 角色id
- * @param {String} sname 不必须 区服名
- * @param {Number} level 不必须 角色等级
- * @param {string} job 不必须 职业
- */
-sdk.upgrade = function(uid,sid,role,roleId,sname,level,job=''){
-    var msg={};
-    window.parent.postMessage({
-        cmd:'upgrade',
-        uid:uid,
-        server:sid,
-        role:role,
-        roleId:roleId,
-        sname:sname||'',
-        level:level||'',
-        job
-    },"*")
-}
+
 
 
 
