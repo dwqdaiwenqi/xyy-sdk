@@ -55,6 +55,8 @@
     
 #### sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
 
+#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name,product_name,product_desc,job)
+
 #### pay(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name,product_name,product_desc,job)
 
 #### sendrole()
