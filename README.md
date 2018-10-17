@@ -73,7 +73,11 @@ xyy.listenEventOn('createRole', function(data){
     role: String — 区服名
     
     roleId: Number — 区服id
-    
+
+    sname: String — 区服名
+
+    level: Number — 角色等级
+
     job: String — 职业
        
    }

@@ -1,6 +1,6 @@
 xyy.listenEventOn('createRole', function(data){
   console.log(data)
-   /**
+    /**
    # 此处 data 的值为
    {
     uid: Number — 平台用户id
@@ -10,10 +10,12 @@ xyy.listenEventOn('createRole', function(data){
     role: String — 区服名
     
     roleId: Number — 区服id
-    
-    job: String — 职业
 
-    gameid: Number — 游戏id
+    sname: String — 区服名
+
+    level: Number — 角色等级
+
+    job: String — 职业
        
    }
    **/
