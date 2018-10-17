@@ -58,5 +58,12 @@ module.exports = {
       }
     ]
   },
-  plugins: []
+  plugins: [
+    new webpack.BannerPlugin(" xyy-sdk v"+require('./package.json').version+"\r\n By https://github.com/dwqdaiwenqi \r\n Github: https://github.com/dwqdaiwenqi/xyy-sdk\r\n MIT Licensed.")
+    ,new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(process.env.npm_lifecycle_event)
+      ,__VERSION__: JSON.stringify(require('./package.json').version)
+    })
+  ]
+
 }
