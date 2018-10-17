@@ -1,8 +1,7 @@
 xyy.listenEventOn('createRole', function(data){
   console.log(data)
-   // 联运gameid不必须？
    /**
-   # 此处 data 的值为
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -24,7 +23,7 @@ xyy.listenEventOn('createRole', function(data){
 xyy.listenEventOn('sendrole', function(data){
   console.log(data)
    /**
-   # 此处 data 的值为
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -41,7 +40,7 @@ xyy.listenEventOn('sendrole', function(data){
 xyy.listenEventOn('sendchatlog', function(data){
   console.log(data)
   /**
-   # 此处 data 的值为
+   # 此处 data 的值为 
    {
     serverid: Number — 区服id
 
@@ -78,9 +77,8 @@ xyy.listenEventOn('sendchatlog', function(data){
 
 xyy.listenEventOn('loginGameData', function(data){
   console.log(data)
-  // 联运gid和rolename不是必须？
   /**
-   # 此处 data 的值为
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -103,11 +101,10 @@ xyy.listenEventOn('loginGameData', function(data){
 xyy.listenEventOn('upgrade', function(data){
   console.log(data)
   /**
-   # 此处 data 的值为
+   # 此处 data 的值为 
+   {
     uid: Number — 平台用户id
 
-    gid: Number — 游戏id
-    
     sid: Number — 区服id
     
     roleid: Number — 角色id
@@ -125,7 +122,7 @@ xyy.listenEventOn('upgrade', function(data){
 xyy.listenEventOn('pay', function(data){
   console.log(data)
    /**
-   # 此处 data 的值为
+   # 此处 data 的值为 
    {
     gid: Number — 游戏id
 
