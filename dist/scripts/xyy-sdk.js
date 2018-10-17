@@ -1,5 +1,5 @@
 /*!
- *  xyy-sdk v1.0.5
+ *  xyy-sdk v1.0.6
  *  By https://github.com/dwqdaiwenqi 
  *  Github: https://github.com/dwqdaiwenqi/xyy-sdk
  *  MIT Licensed.
@@ -2117,8 +2117,26 @@ sdk.dialog = function (txt, callback) {
 sdk.closePayBox = function () {
     $("#payBox").hide();
 };
-
+/**
+ *
+ *
+ * @param {*} gid
+ * @param {*} uid
+ * @param {*} appusername
+ * @param {*} sid
+ * @param {*} openuid
+ * @param {*} porductid
+ * @param {*} money
+ * @param {*} resource
+ * @param {*} app_order_id
+ * @param {*} server_name
+ * @param {*} product_name
+ * @param {*} product_desc
+ * @param {string} [job='']
+ */
 sdk.loadPayBox = function (gid, uid, appusername, sid, openuid, porductid, money, resource, app_order_id, server_name, product_name, product_desc) {
+    var job = arguments.length > 12 && arguments[12] !== undefined ? arguments[12] : '';
+
 
     var msg = {};
     window.parent.postMessage({
@@ -2134,7 +2152,8 @@ sdk.loadPayBox = function (gid, uid, appusername, sid, openuid, porductid, money
         app_order_id: app_order_id || 1,
         server_name: server_name || '',
         product_name: product_name || '',
-        product_desc: product_desc || ''
+        product_desc: product_desc || '',
+        job: job
     }, "*");
 };
 
@@ -2152,8 +2171,21 @@ sdk.userbehavior = function (dataType, serverID, serverName, userId, roleID, rol
         moneyNum: moneyNum //用户元宝数
     }, "*");
 };
+/**
+ *
+ *
+ * @param {Number} uid 必须，用户id
+ * @param {Number} sid 必须，区服id
+ * @param {Number} role 必须，角色名
+ * @param {Number} roleId 必须，角色id
+ * @param {Number} sname 必须，区服名
+ * @param {Number} level 必须，角色等级
+ * @param {string} job 不必须，职业
+ */
 
-sdk.createRole = function (uid, sid, role, roleId) {
+sdk.createRole = function (uid, sid, role, roleId, sname, level) {
+    var job = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : '';
+
     var msg = {};
 
     window.parent.postMessage({
@@ -2161,11 +2193,24 @@ sdk.createRole = function (uid, sid, role, roleId) {
         uid: uid,
         server: sid,
         role: role,
-        roleId: roleId
+        roleId: roleId,
+        sname: sname || '',
+        level: level || '',
+        job: job
+
     }, "*");
 };
-
-sdk.gamelogin = function (uid, gid, sid, roleid, rolename) {
+/**
+ *
+ *
+ * @param {Number} uid 必须，用户id
+ * @param {Number} gid 必须，游戏id
+ * @param {Number} sid 必须，区服id
+ * @param {Number} roleid 不必须，角色id
+ * @param {String} rolename 不必须，角色名
+ * @param {String} rolename 不必须，角色等级
+ */
+sdk.gamelogin = function (uid, gid, sid, roleid, rolename, level) {
     var msg = {};
     window.parent.postMessage({
         cmd: 'loginGameData',
@@ -2173,11 +2218,31 @@ sdk.gamelogin = function (uid, gid, sid, roleid, rolename) {
         gid: gid,
         sid: sid,
         roleid: roleid || '',
-        rolename: rolename || ''
+        rolename: rolename || '',
+        level: level || ''
     }, "*");
 };
-
+/**
+ *
+ *
+ * @param {*} serverid
+ * @param {*} rolename
+ * @param {*} servername
+ * @param {*} channel
+ * @param {*} channelname
+ * @param {*} ouid
+ * @param {*} content
+ * @param {*} chattype
+ * @param {*} typename
+ * @param {*} platid
+ * @param {*} gameid
+ * @param {*} touserid
+ * @param {*} payamount
+ * @param {string} job
+ */
 sdk.sendchatlog = function (serverid, rolename, servername, channel, channelname, ouid, content, chattype, typename, platid, gameid, touserid, payamount) {
+    var job = arguments.length > 13 && arguments[13] !== undefined ? arguments[13] : '';
+
     var msg = {};
     window.parent.postMessage({
         cmd: 'sendchatlog',
@@ -2193,13 +2258,23 @@ sdk.sendchatlog = function (serverid, rolename, servername, channel, channelname
         platid: platid,
         gameid: gameid,
         touserid: touserid,
-        payamount: payamount
+        payamount: payamount,
+        job: job
     }, "*");
 };
 sdk.sendchats = function (serverid, rolename, servername, channel, channelname, ouid, content, chattype, typename, platid, gameid, touserid, payamount) {
-    $.getJSON('http://www.xy.com/h5/chatmonitor/sendchats?callback=?', { serverid: serverid, rolename: rolename, servername: servername, channel: channel, channelname: channelname, ouid: ouid, content: content, chattype: chattype, typename: typename, platid: platid, gameid: gameid, touserid: touserid, payamount: payamount }, function (res) {});
-};
+    var job = arguments.length > 13 && arguments[13] !== undefined ? arguments[13] : '';
 
+    $.getJSON('http://www.xy.com/h5/chatmonitor/sendchats?callback=?', { serverid: serverid, rolename: rolename, servername: servername, channel: channel, channelname: channelname, ouid: ouid, content: content, chattype: chattype, typename: typename, platid: platid, gameid: gameid, touserid: touserid, payamount: payamount, job: job }, function (res) {});
+};
+/**
+ *
+ *
+ * @param {*} uid
+ * @param {*} gid
+ * @param {*} sid
+ * @param {*} roleid
+ */
 sdk.sendrole = function (uid, gid, sid, roleid) {
     var msg = {};
     window.parent.postMessage({
@@ -2211,35 +2286,20 @@ sdk.sendrole = function (uid, gid, sid, roleid) {
     }, "*");
 };
 
-//创角统计
-sdk.createPlayer = function (uid, server, role, roleId) {
-    if (!uid || !server || !role) {
-        return false;
-    }
-    $.ajax({
-        'url': "/h5/game/createRole",
-        'type': 'POST',
-        'data': { uid: uid, server: server, role: role, gameid: sdk.gameId, roleId: roleId },
-        'success': function success(data) {},
-        'error': function error(data) {}
-    });
-};
-
-//登录游戏统计
-sdk.loginGameData = function (uid, gid, sid, roleid, rolename) {
-    if (!uid || !gid || !sid) {
-        return false;
-    }
-    $.ajax({
-        'url': "/h5/game/logingame",
-        'type': 'GET',
-        'data': { uid: uid, sid: sid, gid: sdk.gameId, roleid: roleid, rolename: rolename },
-        'success': function success(data) {},
-        'error': function error(data) {}
-    });
-};
-
+/**
+ *
+ *
+ * @param {Number} uid 用户id
+ * @param {Number} sid 区服id
+ * @param {String} role 角色名
+ * @param {Number} roleId 角色id
+ * @param {String} sname 不必须 区服名
+ * @param {Number} level 不必须 角色等级
+ * @param {string} job 不必须 职业
+ */
 sdk.upgrade = function (uid, sid, role, roleId, sname, level) {
+    var job = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : '';
+
     var msg = {};
     window.parent.postMessage({
         cmd: 'upgrade',
@@ -2248,8 +2308,41 @@ sdk.upgrade = function (uid, sid, role, roleId, sname, level) {
         role: role,
         roleId: roleId,
         sname: sname || '',
-        level: level || ''
+        level: level || '',
+        job: job
     }, "*");
+};
+
+//创角统计
+sdk.createPlayer = function (uid, server, role, roleId) {
+    var job = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+
+    if (!uid || !server || !role) {
+        return false;
+    }
+    $.ajax({
+        'url': "/h5/game/createRole",
+        'type': 'POST',
+        'data': { uid: uid, server: server, role: role, gameid: sdk.gameId, roleId: roleId, job: job },
+        'success': function success(data) {},
+        'error': function error(data) {}
+    });
+};
+
+//登录游戏统计
+sdk.loginGameData = function (uid, gid, sid, roleid, rolename) {
+    var job = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : '';
+
+    if (!uid || !gid || !sid) {
+        return false;
+    }
+    $.ajax({
+        'url': "/h5/game/logingame",
+        'type': 'GET',
+        'data': { uid: uid, sid: sid, gid: sdk.gameId, roleid: roleid, rolename: rolename, job: job },
+        'success': function success(data) {},
+        'error': function error(data) {}
+    });
 };
 
 //离开游戏弹框
@@ -2418,30 +2511,6 @@ sdk.loadPay = function (gid, uid, appusername, sid, openuid, porductid, resource
         $(this).parent().remove();
         $('.iframe_box').hide();
         //$('iframe_box').remove();
-    });
-};
-
-sdk.login = function (type, sid, uid, roleId) {
-    var msg = {};
-    window.parent.postMessage({
-        cmd: 'login',
-        type: type,
-        uid: uid,
-        server: sid,
-        roleId: roleId
-    }, "*");
-};
-
-sdk.loginGame = function (type, server, uid, roleId) {
-    if (!uid || !server || !type) {
-        return false;
-    }
-    $.ajax({
-        'url': "/game/gameReg",
-        'type': 'POST',
-        'data': { uid: uid, server: server, type: type, gameid: sdk.gameId, roleId: roleId },
-        'success': function success(data) {},
-        'error': function error(data) {}
     });
 };
 
@@ -2738,7 +2807,7 @@ module.exports = (0, _assign2.default)(_base2.default, {
       });
     });
   },
-  version: "1.0.5",
+  version: "1.0.6",
   ev: new _event2.default(),
   Brower: _brower2.default
 
