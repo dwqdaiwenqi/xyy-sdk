@@ -33,33 +33,6 @@ xyy.gameInfo = ''
 xyy.registerEvent()
 
 // 3、监听游戏方的回调
-xyy.listenEventOn('userbehavior', function(data){
-  console.log(data)
-   /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
-   {
-    data_type: Number — 必须，上报类型，1(选择服务器)，2(创建角色)，3(进入游戏)、4(等级提升)、5(退出游戏)
-
-    server_id: Number — 必须，区服id
-
-    server_name: String — 必须，区服名
-
-    user_id: Number — 必须，平台用户id
-
-    game_id: Number — 不必须，游戏id
-
-    role_id: Number — 不必须，角色id
-
-    role_name: String — 不必须，角色名
-
-    role_level: Number — 不必须，角色等级
-
-    money: Number — 不必须，用户元宝数
-
-    job: String — 不必须，职业
-   }
-  **/
-})
 xyy.listenEventOn('createRole', function(data){
   console.log(data)
    // 联运gameid不必须？
