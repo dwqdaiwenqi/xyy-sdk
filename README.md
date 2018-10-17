@@ -1,4 +1,4 @@
-## xyy-sdk 1.0.5
+## xyy-sdk 1.0.6
 
 我方xyy-sdk使用
 
