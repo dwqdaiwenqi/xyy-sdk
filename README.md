@@ -79,7 +79,7 @@ xyy.listenEventOn('createRole', function(data){
     level: Number — 角色等级
 
     job: String — 职业
-       
+  
    }
    **/
 })
@@ -153,9 +153,11 @@ xyy.listenEventOn('loginGameData', function(data){
     roleid: Number — 角色id
     
     rolename: Number —角色名
+
+    level:String — 角色等级
     
     job: String — 职业
-    
+
    }
    **/
 })

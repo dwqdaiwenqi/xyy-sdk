@@ -1,7 +1,8 @@
 xyy.listenEventOn('createRole', function(data){
   console.log(data)
-    /**
-   # 此处 data 的值为
+   // 联运gameid不必须？
+   /**
+   # 此处 data 的值为 (同postMessage时传入的参数)
    {
     uid: Number — 平台用户id
 
@@ -16,14 +17,14 @@ xyy.listenEventOn('createRole', function(data){
     level: Number — 角色等级
 
     job: String — 职业
-       
+  
    }
    **/
 })
 xyy.listenEventOn('sendrole', function(data){
   console.log(data)
    /**
-   # 此处 data 的值为
+   # 此处 data 的值为 (同postMessage时传入的参数)
    {
     uid: Number — 平台用户id
 
@@ -40,7 +41,7 @@ xyy.listenEventOn('sendrole', function(data){
 xyy.listenEventOn('sendchatlog', function(data){
   console.log(data)
   /**
-   # 此处 data 的值为
+   # 此处 data 的值为 (同postMessage时传入的参数)
    {
     serverid: Number — 区服id
 
@@ -77,8 +78,9 @@ xyy.listenEventOn('sendchatlog', function(data){
 
 xyy.listenEventOn('loginGameData', function(data){
   console.log(data)
+  // 联运gid和rolename不是必须？
   /**
-   # 此处 data 的值为 
+   # 此处 data 的值为 (同postMessage时传入的参数)
    {
     uid: Number — 平台用户id
 
@@ -89,9 +91,11 @@ xyy.listenEventOn('loginGameData', function(data){
     roleid: Number — 角色id
     
     rolename: Number —角色名
+
+    level:String — 角色等级
     
     job: String — 职业
-    
+
    }
    **/
 })
@@ -99,7 +103,7 @@ xyy.listenEventOn('loginGameData', function(data){
 xyy.listenEventOn('upgrade', function(data){
   console.log(data)
   /**
-   # 此处 data 的值为 
+   # 此处 data 的值为 (同postMessage时传入的参数)
    {
     uid: Number — 平台用户id
 
@@ -110,7 +114,7 @@ xyy.listenEventOn('upgrade', function(data){
     roleid: Number — 角色id
     
     rolename: Number —角色名
-
+    
     level: Number — 角色等级
     
     job: String — 职业
@@ -122,7 +126,7 @@ xyy.listenEventOn('upgrade', function(data){
 xyy.listenEventOn('pay', function(data){
   console.log(data)
    /**
-   # 此处 data 的值为 
+   # 此处 data 的值为 (同postMessage时传入的参数)
    {
     gid: Number — 游戏id
 

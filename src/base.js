@@ -204,8 +204,9 @@ sdk.createRole = function(uid,sid,role,roleId,sname,level,job=''){
  * @param {Number} roleid 不必须，角色id
  * @param {String} rolename 不必须，角色名
  * @param {String} rolename 不必须，角色等级
+ * @param {String} job 不必须，职业
  */
-sdk.gamelogin = function(uid,gid,sid,roleid,rolename,level){
+sdk.gamelogin = function(uid,gid,sid,roleid,rolename,level,job=''){
     var msg={};
     window.parent.postMessage({
         cmd:'loginGameData',
@@ -214,7 +215,8 @@ sdk.gamelogin = function(uid,gid,sid,roleid,rolename,level){
         sid:sid,
         roleid:roleid||'',
         rolename:rolename||'',
-        level:level||''
+        level:level||'',
+        job
     },"*")
 };
 /**
