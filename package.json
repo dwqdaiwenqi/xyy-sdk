@@ -1,6 +1,6 @@
 {
   "name": "xyy-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "email": "2540546236@qq.com",
   "description": "xyy-sdk",
   "main": "dist/scripts/main.js",
@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development --w",
     "pro": "webpack --mode production"
-    
   },
   "author": "Yohane",
   "license": "ISC",
