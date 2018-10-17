@@ -9,13 +9,14 @@
 ```
 ### API
 #### createRole(uid,sid,role,roleId,job)
-uid - 必须，用户id
+`paramter`
+  uid - 必须，用户id
 
-sid - 必须，区服id
+  sid - 必须，区服id
 
-role  必须，角色名
+  role  必须，角色名
 
-roleId - 必须，角色id
+  roleId - 必须，角色id
 
-job - 不必须，职业
+  job - 不必须，职业
 
