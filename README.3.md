@@ -8,14 +8,14 @@
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 ### API
-#### createRole(uid,sid,role,roleId,job)
-    uid — 必须，用户id
+#### createRole(uid, sid, role, roleId, job)
+    uid:Number — 必须，用户id
 
-    sid — 必须，区服id
+    sid:Number — 必须，区服id
 
-    role — 必须，角色名
+    role:String — 必须，角色名
 
-    roleId — 必须，角色id
+    roleId:Number — 必须，角色id
 
-    job — 不必须，职业
+    job:String — 不必须，职业
 
