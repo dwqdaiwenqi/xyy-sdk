@@ -8,7 +8,7 @@
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 ### API
-#### createRole(uid, sid, role, roleId, job)
+#### createRole(uid, sid, role, roleId, sname, level, job)
     uid:Number — 必须，用户id
 
     sid:Number — 必须，区服id
@@ -16,7 +16,11 @@
     role:String — 必须，角色名
 
     roleId:Number — 必须，角色id
-
+    
+    sname:String — 不必须，区服名
+    
+    level:Number — 不必须，角色等级
+    
     job:String — 不必须，职业
 
 #### gamelogin(uid, gid, sid, roleid, rolename)
