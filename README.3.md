@@ -1,4 +1,4 @@
-## xyy-sdk 1.0.6
+## xyy-sdk 1.0.7
 
 游戏方xyy-sdk使用
 

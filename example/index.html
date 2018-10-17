@@ -22,7 +22,7 @@
   </script> -->
   <!-- <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?1.0.1"></script> -->
   <script src="/xyy-sdk/dist/scripts/xyy-sdk.js"></script>
-  <iframe src="http://192.168.75.71:7878/xyy-sdk/index-x.html" frameborder="0"></iframe>
+  <iframe src="http://192.168.75.71:7878/xyy-sdk/example/index-x.html" frameborder="0"></iframe>
   <script>
     xyy.listenEventOn('createRole', function(data){
       console.log(data)
@@ -49,6 +49,10 @@
       console.log(data)
     })
     
+    xyy.listenEventOn('upgrade', data=>{
+      console.log(data);
+    })
+
     xyy.registerEvent()
 
     

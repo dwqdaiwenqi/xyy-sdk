@@ -1,4 +1,4 @@
-## xyy-sdk 1.0.6
+## xyy-sdk v1.0.7
 
 我方xyy-sdk使用
 
@@ -142,8 +142,6 @@ xyy.listenEventOn('upgrade', function(data){
    {
     uid: Number — 平台用户id
 
-    gid: Number — 游戏id
-    
     sid: Number — 区服id
     
     roleid: Number — 角色id

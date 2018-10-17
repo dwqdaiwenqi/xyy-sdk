@@ -203,7 +203,7 @@ sdk.createRole = function(uid,sid,role,roleId,sname,level,job=''){
  * @param {Number} sid 必须，区服id
  * @param {Number} roleid 不必须，角色id
  * @param {String} rolename 不必须，角色名
- * @param {String} rolename 不必须，角色等级
+ * @param {String} level 不必须，角色等级
  * @param {String} job 不必须，职业
  */
 sdk.gamelogin = function(uid,gid,sid,roleid,rolename,level,job=''){
