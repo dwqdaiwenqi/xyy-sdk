@@ -1,3 +1,9 @@
+/*!
+ *  xyy-sdk v1.0.4
+ *  By https://github.com/dwqdaiwenqi 
+ *  Github: https://github.com/dwqdaiwenqi/xyy-sdk
+ *  MIT Licensed.
+ */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -2732,7 +2738,7 @@ module.exports = (0, _assign2.default)(_base2.default, {
       });
     });
   },
-  version: '1.0.4',
+  version: "1.0.4",
   ev: new _event2.default(),
   Brower: _brower2.default
 

@@ -62,7 +62,7 @@ module.exports = Object.assign(base, {
     })
 
   }
-  ,version : '1.0.4'
+  ,version : __VERSION__
   ,ev: new Event()
   ,Brower
 
