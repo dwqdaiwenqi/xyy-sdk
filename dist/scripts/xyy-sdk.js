@@ -1,5 +1,5 @@
 /*!
- *  xyy-sdk v1.0.6
+ *  xyy-sdk v1.0.7
  *  By https://github.com/dwqdaiwenqi 
  *  Github: https://github.com/dwqdaiwenqi/xyy-sdk
  *  MIT Licensed.
@@ -2209,8 +2209,11 @@ sdk.createRole = function (uid, sid, role, roleId, sname, level) {
  * @param {Number} roleid 不必须，角色id
  * @param {String} rolename 不必须，角色名
  * @param {String} rolename 不必须，角色等级
+ * @param {String} job 不必须，职业
  */
 sdk.gamelogin = function (uid, gid, sid, roleid, rolename, level) {
+    var job = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : '';
+
     var msg = {};
     window.parent.postMessage({
         cmd: 'loginGameData',
@@ -2219,7 +2222,8 @@ sdk.gamelogin = function (uid, gid, sid, roleid, rolename, level) {
         sid: sid,
         roleid: roleid || '',
         rolename: rolename || '',
-        level: level || ''
+        level: level || '',
+        job: job
     }, "*");
 };
 /**
@@ -2807,7 +2811,7 @@ module.exports = (0, _assign2.default)(_base2.default, {
       });
     });
   },
-  version: "1.0.6",
+  version: "1.0.7",
   ev: new _event2.default(),
   Brower: _brower2.default
 
