@@ -1,9 +1,4 @@
-/*!
- *  xyy-sdk v1.0.7
- *  By https://github.com/dwqdaiwenqi 
- *  Github: https://github.com/dwqdaiwenqi/xyy-sdk
- *  MIT Licensed.
- */
+/*!  xyy-sdk v1.0.8 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -2208,7 +2203,7 @@ sdk.createRole = function (uid, sid, role, roleId, sname, level) {
  * @param {Number} sid 必须，区服id
  * @param {Number} roleid 不必须，角色id
  * @param {String} rolename 不必须，角色名
- * @param {String} rolename 不必须，角色等级
+ * @param {String} level 不必须，角色等级
  * @param {String} job 不必须，职业
  */
 sdk.gamelogin = function (uid, gid, sid, roleid, rolename, level) {
@@ -2811,7 +2806,7 @@ module.exports = (0, _assign2.default)(_base2.default, {
       });
     });
   },
-  version: "1.0.7",
+  version: "1.0.8",
   ev: new _event2.default(),
   Brower: _brower2.default
 
