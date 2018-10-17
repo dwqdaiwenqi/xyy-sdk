@@ -157,7 +157,7 @@ xyy.listenEventOn('upgrade', function(data){
 })
 
 xyy.listenEventOn('pay', function(data){
-  console.log(data)
+
    /**
    # 此处 data 的值为 (同postMessage时传入的参数)
    {
@@ -165,25 +165,25 @@ xyy.listenEventOn('pay', function(data){
 
     uid: Number — 用户id
     
-    appusername: String — 
+    appusername: String — 用户名
     
     sid: String —  区服id
     
-    openuid: Number — 
+    openuid: Number — 用户游戏内id
     
-    porductid: Number — 职业
+    porductid: Number — 用户购买道具id
     
-    resource: String —
+    resource: String — 联系开发人员获取
     
-    money: Number —
+    money: Number — 金额(单位元)
     
-    app_order_id: Number —
+    app_order_id: Number — 订单id
     
-    server_name: String —
+    server_name: String — 区服名
     
-    product_name: String —
+    product_name: String — 商品名
     
-    product_desc: String —
+    product_desc: String — 商品描述
     
     job: String — 职业
     

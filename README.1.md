@@ -13,7 +13,7 @@ xyy.listenEventOn('createRole', function(data){
   console.log(data)
    // 联运gameid不必须？
    /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -35,7 +35,7 @@ xyy.listenEventOn('createRole', function(data){
 xyy.listenEventOn('sendrole', function(data){
   console.log(data)
    /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -52,7 +52,7 @@ xyy.listenEventOn('sendrole', function(data){
 xyy.listenEventOn('sendchatlog', function(data){
   console.log(data)
   /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
+   # 此处 data 的值为 
    {
     serverid: Number — 区服id
 
@@ -91,7 +91,7 @@ xyy.listenEventOn('loginGameData', function(data){
   console.log(data)
   // 联运gid和rolename不是必须？
   /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -114,7 +114,7 @@ xyy.listenEventOn('loginGameData', function(data){
 xyy.listenEventOn('upgrade', function(data){
   console.log(data)
   /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
+   # 此处 data 的值为 
    {
     uid: Number — 平台用户id
 
@@ -133,33 +133,33 @@ xyy.listenEventOn('upgrade', function(data){
 })
 
 xyy.listenEventOn('pay', function(data){
-  console.log(data)
+
    /**
-   # 此处 data 的值为 (同postMessage时传入的参数)
+   # 此处 data 的值为 
    {
     gid: Number — 游戏id
 
     uid: Number — 用户id
     
-    appusername: String — 
+    appusername: String — 用户名
     
     sid: String —  区服id
     
-    openuid: Number — 
+    openuid: Number — 用户游戏内id
     
-    porductid: Number — 职业
+    porductid: Number — 用户购买道具id
     
-    resource: String —
+    resource: String — 联系开发人员获取
     
-    money: Number —
+    money: Number — 金额(单位元)
     
-    app_order_id: Number —
+    app_order_id: Number — 订单id
     
-    server_name: String —
+    server_name: String — 区服名
     
-    product_name: String —
+    product_name: String — 商品名
     
-    product_desc: String —
+    product_desc: String — 商品描述
     
     job: String — 职业
     
