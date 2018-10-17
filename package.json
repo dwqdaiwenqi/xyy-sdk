@@ -1,0 +1,19 @@
+{
+  "name": "xyy-sdk",
+  "version": "1.0.4",
+  "email": "2540546236@qq.com",
+  "description": "xyy-sdk",
+  "main": "dist/scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --w",
+    "pro": "webpack --mode production"
+  },
+  "author": "Yohane",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^0.5.0",
+    "raw-loader": "^0.5.1"
+  },
+  "devDependencies": {}
+}

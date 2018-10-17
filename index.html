@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xyy-sdk</title>
+</head>
+<body>
+  <!-- <script src="http://static.xyimg.net/gamesite/mu/mufed/common/js/vconsole.min.js"></script> -->
+  <!-- <script>
+    new VConsole()
+  </script>
+  <script>
+    window.onerror = function (message, url, line, column, error) {
+      console.log('onerror 错误信息 ↙');
+      debugger
+      console.log({
+          msg,  url,  row, col, error
+      })
+    }
+  </script> -->
+  <!-- <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?1.0.1"></script> -->
+  <script src="/xyy-sdk/dist/scripts/xyy-sdk.js?1.0.1"></script>
+  <iframe src="http://192.168.75.71:7878/xyy-sdk/index-x.html" frameborder="0"></iframe>
+  <script>
+    xyy.listenEventOn('createRole', function(data){
+      console.log(data)
+      // ...
+    })
+    xyy.listenEventOn('sendrole', function(data){
+      console.log(data)
+      
+    })
+    xyy.listenEventOn('sendchatlog', function(data){
+      console.log(data)
+      
+    })
+    xyy.listenEventOn('loginGameData', function(data){
+      console.log(data)
+      
+    })
+
+    xyy.listenEventOn('userbehavior', function(data){
+      console.log(data)
+    })
+
+    xyy.listenEventOn('pay', function(data){
+      console.log(data)
+    })
+    
+    xyy.registerEvent()
+
+    
+    
+  </script>
+</body>
+</html>
