@@ -1,5 +1,5 @@
 /*!
- *  xyy-sdk v1.0.4
+ *  xyy-sdk v1.0.5
  *  By https://github.com/dwqdaiwenqi 
  *  Github: https://github.com/dwqdaiwenqi/xyy-sdk
  *  MIT Licensed.
@@ -2738,7 +2738,7 @@ module.exports = (0, _assign2.default)(_base2.default, {
       });
     });
   },
-  version: "1.0.4",
+  version: "1.0.5",
   ev: new _event2.default(),
   Brower: _brower2.default
 
