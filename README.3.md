@@ -8,7 +8,7 @@
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 ### API
-#### createRole(uid, sid, role, roleId, job)
+#### [Static] createRole(uid, sid, role, roleId, job)
     uid:Number — 必须，用户id
 
     sid:Number — 必须，区服id
