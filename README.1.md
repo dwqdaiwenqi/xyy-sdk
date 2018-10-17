@@ -119,6 +119,8 @@ xyy.listenEventOn('upgrade', function(data){
     roleid: Number — 角色id
     
     rolename: Number —角色名
+
+    level: Number — 角色等级
     
     job: String — 职业
     
