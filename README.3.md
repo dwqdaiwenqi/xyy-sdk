@@ -19,3 +19,14 @@
 
     job:String — 不必须，职业
 
+#### gamelogin(uid, gid, sid, roleid, rolename)
+    uid:Number — 必须，用户id
+
+    gid:Number — 必须，游戏id
+
+    role:String — 必须，角色名
+
+    roleid:Number — 不必须，角色id
+
+    job:String — 不必须，职业
+
