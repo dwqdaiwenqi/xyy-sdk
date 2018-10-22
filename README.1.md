@@ -11,7 +11,6 @@
 ```js
 xyy.listenEventOn('createRole', function(data){
   console.log(data)
-   // 联运gameid不必须？
    /**
    # 此处 data 的值为 
    {
@@ -89,7 +88,6 @@ xyy.listenEventOn('sendchatlog', function(data){
 
 xyy.listenEventOn('loginGameData', function(data){
   console.log(data)
-  // 联运gid和rolename不是必须？
   /**
    # 此处 data 的值为 
    {
