@@ -7,9 +7,7 @@
 <!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.9 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
-
-
-H5 登录游戏验证（登录链接由游戏方提供）
+### 使用sdk前 登录h5游戏验证（登录链接由游戏方提供）
 
 必传参数：
 
