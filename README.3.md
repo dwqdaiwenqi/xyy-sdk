@@ -1,62 +1,51 @@
-## xyy-sdk 1.0.8
+## xyy-sdk 1.0.9
 
 游戏方xyy-sdk使用
 
 ### 引入
 ```html
-<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.1 -->
+<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.9 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 ### API
-#### createRole(uid, sid, role, roleId, sname, level, job)
-    uid:Number — 必须，用户id
 
-    sid:Number — 必须，区服id
+支付调用方法：
+loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
+gid: 游戏id 骑战三国GID=16
 
-    role:String — 必须，角色名
+uid：登录后用户id，由登录传给游戏的用户id
 
-    roleId:Number — 必须，角色id
-    
-    sname:String — 不必须，区服名
-    
-    level:Number — 不必须，角色等级
-    
-    job:String — 不必须，职业
+appusername：用户名
 
-#### gamelogin(uid, gid, sid, roleid, rolename, level, job)
-    uid:Number — 必须，用户id
+sid：大区id
 
-    gid:Number — 必须，游戏id
-    
-    sid:Number — 必须，区服id
+openuid：用户游戏内id
 
-    roleid:Number — 不必须，角色id
-    
-    rolename:String — 不必须，角色名
-    
-    level:String — 不必须，角色等级
+productid：用户购买道具id
 
-    job:String — 不必须，职业
-    
-#### upgrade(uid, sid, role, roleId, sname, level, job)
-    uid:Number — 必须，用户id
-    
-    sid:Number — 必须，区服id
-    
-    role:String — 必须，角色名
+money：金额(单位元)
 
-    roleId:Number — 必须，角色id
-    
-    sname:String — 不必须，角色id
+resource：联系开发人员获取
 
-    level:String — 不必须，角色等级
+app_order_id：订单id
 
-    job:String — 不必须，职业
-    
-#### sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
+创角成功调用
+createRole(uid,server,role,roleId,sname,level)
 
-#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name,product_name,product_desc,job)
+角色升级调用
+upgrade(uid,server,role,roleId,sname,level)
 
-#### pay(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name,product_name,product_desc,job)
+进服数据发送
+gamelogin(uid,gid,sid,roleid,rolename)
 
-#### sendrole()
+微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
+sendrole (uid,gid,sid,roleid) 
+
+聊天发送
+sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
+
+
+
+
+
+
