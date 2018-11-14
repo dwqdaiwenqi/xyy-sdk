@@ -19,7 +19,7 @@ logintime: 登录时间
 
 token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 
-##### 在游戏中，调用xyy-sdk的方法
+##### 游戏中调用xyy-sdk的方法
 ```js
 
 // 如：进服数据发送
