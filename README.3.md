@@ -13,21 +13,21 @@
 
 #### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
 
-  gid: 游戏id 骑战三国GID=16
+    gid: 游戏id 骑战三国GID=16
 
-  uid：登录后用户id，由登录传给游戏的用户id
+    uid：登录后用户id，由登录传给游戏的用户id
 
-  appusername：用户名
+    appusername：用户名
 
-  sid：大区id
+    sid：大区id
 
-  openuid：用户游戏内id
+    openuid：用户游戏内id
 
-  productid：用户购买道具id
+    productid：用户购买道具id
 
-  money：金额(单位元)
+    money：金额(单位元)
 
-  resource：联系开发人员获取
+    resource：联系开发人员获取
 
   app_order_id：订单id
 
