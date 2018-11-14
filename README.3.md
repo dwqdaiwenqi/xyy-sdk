@@ -13,23 +13,23 @@
 
 #### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
 
-gid: 游戏id 骑战三国GID=16
+  gid: 游戏id 骑战三国GID=16
 
-uid：登录后用户id，由登录传给游戏的用户id
+  uid：登录后用户id，由登录传给游戏的用户id
 
-appusername：用户名
+  appusername：用户名
 
-sid：大区id
+  sid：大区id
 
-openuid：用户游戏内id
+  openuid：用户游戏内id
 
-productid：用户购买道具id
+  productid：用户购买道具id
 
-money：金额(单位元)
+  money：金额(单位元)
 
-resource：联系开发人员获取
+  resource：联系开发人员获取
 
-app_order_id：订单id
+  app_order_id：订单id
 
 #### 创角成功调用
 
@@ -51,17 +51,17 @@ level:角色等级
 
 #### upgrade(uid,server,role,roleId,sname,level)
 
-uid:平台用户id，
+  uid:平台用户id，
 
-server:区服id,
+  server:区服id,
 
-role:角色名称,
+  role:角色名称,
 
-roleId:游戏角色id,
+  roleId:游戏角色id,
 
-sname:游戏区服名称,
+  sname:游戏区服名称,
 
-level:角色等级
+  level:角色等级
 
 #### 进服数据发送
 
