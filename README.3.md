@@ -9,9 +9,13 @@
 ```
 #### 登录游戏验证（登录链接由游戏方提供）
 在使用jssdk前，要进行游戏登录验证，token生成规则如下：
+
     token : 验证字符串 md5(uid + key + logintime)
+    
     uid : 平台用户id
+    
     logintime: 登录时间
+    
     key: salsjOIUR94wjsdfjlw4j （由后端开发人员提供）
 
 
