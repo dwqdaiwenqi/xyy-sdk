@@ -7,7 +7,9 @@
 <!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.9 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
-#### H5 登录游戏验证（登录链接由游戏方提供）
+
+### 使用
+#### 先进行H5 登录游戏验证（登录链接由游戏方提供）
 
 必传参数：
 
@@ -17,7 +19,13 @@ logintime: 登录时间
 
 token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 
+#### 在游戏中，调用xyy-sdk的方法
+```js
 
+// 如：进服数据发送
+xyy.gamelogin(uid,gid,sid)
+
+```
 
 
 ### API
