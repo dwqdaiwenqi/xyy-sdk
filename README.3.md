@@ -36,7 +36,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 支付调用方法
 
-#### xyy.loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job='')
+#### .loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job='')
 
     gid: 游戏id
 
@@ -68,7 +68,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 创角成功调用
 
-#### xyy.createRole(uid,server,role,roleId,sname='',level='',job='')
+#### .createRole(uid,server,role,roleId,sname='',level='',job='')
 
     uid:平台用户id
 
@@ -86,7 +86,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 角色升级调用
 
-#### xyy.upgrade(uid,server,role,roleId,sname='',level='',job='')
+#### .upgrade(uid,server,role,roleId,sname='',level='',job='')
 
       uid:平台用户id
 
@@ -104,7 +104,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 进服数据发送
 
-#### xyy.gamelogin(uid,gid,sid,roleid='',rolename='',level='',job='')
+#### .gamelogin(uid,gid,sid,roleid='',rolename='',level='',job='')
 
     uid:平台用户id
 
@@ -122,7 +122,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
 
-#### xyy.sendrole (uid,gid,sid,roleid) 
+#### .sendrole (uid,gid,sid,roleid) 
 
     uid:平台用户id
 
@@ -134,7 +134,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 聊天发送
 
-#### xyy.sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
+#### .sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
 
     serverid: 服务器编号
 
