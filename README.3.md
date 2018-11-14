@@ -17,7 +17,9 @@ uid : 平台用户id
 
 logintime: 登录时间
 
-token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
+key: salsjOIUR94wjsdfjlw4j （由后端开发人员提供）
+
+token : 验证字符串 md5(uid + key + logintime)
 
 
 ### API
