@@ -47,9 +47,9 @@ sname:游戏区服名称,
 
 level:角色等级
 
-角色升级调用
+#### 角色升级调用
 
-upgrade(uid,server,role,roleId,sname,level)
+#### upgrade(uid,server,role,roleId,sname,level)
 
 uid:平台用户id，
 
@@ -63,9 +63,9 @@ sname:游戏区服名称,
 
 level:角色等级
 
-进服数据发送
+#### 进服数据发送
 
-gamelogin(uid,gid,sid,roleid,rolename)
+#### gamelogin(uid,gid,sid,roleid,rolename)
 
 uid:平台用户id，
 
@@ -73,9 +73,9 @@ gid 游戏id（骑战三国为16）
 
 sid:区服id
 
-微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
+#### 微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
 
-sendrole (uid,gid,sid,roleid) 
+#### sendrole (uid,gid,sid,roleid) 
 
 uid:平台用户id，
 
@@ -85,9 +85,9 @@ sid:区服id
 
 roleid:游戏角色id,
 
-聊天发送
+#### 聊天发送
 
-sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
+#### sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
 
 serverid: 区服id
 
