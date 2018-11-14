@@ -25,6 +25,10 @@ token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 // 如：进服数据发送
 xyy.gamelogin(uid, gid, sid)
 
+// 角色升级调用
+xyy.upgrade(uid, server, role, roleId)
+
+
 ```
 
 
