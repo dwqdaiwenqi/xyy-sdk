@@ -58,15 +58,15 @@ token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 
 #### xyy.createRole(uid,server,role,roleId,sname='',level='',job='')
 
-    uid:平台用户id，
+    uid:平台用户id
 
-    server:区服id,
+    server:区服id
 
-    role:角色名称,
+    role:角色名称
 
-    roleId:游戏角色id,
+    roleId:游戏角色id
 
-    sname:不必须，游戏区服名称,
+    sname:不必须，游戏区服名称
 
     level:不必须，角色等级
     
@@ -94,7 +94,7 @@ token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 
 #### xyy.gamelogin(uid,gid,sid,roleid='',rolename='',level='',job='')
 
-    uid:平台用户id，
+    uid:平台用户id
 
     gid 游戏id（骑战三国为16）
 
@@ -112,13 +112,13 @@ token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 
 #### xyy.sendrole (uid,gid,sid,roleid) 
 
-    uid:平台用户id，
+    uid:平台用户id
 
     gid 游戏id（骑战三国为16）
 
     sid:区服id
 
-    roleid:游戏角色id,
+    roleid:游戏角色id
 
 #### 聊天发送
 
