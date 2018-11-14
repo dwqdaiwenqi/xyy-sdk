@@ -11,6 +11,7 @@
 
 支付调用方法：
 loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
+
 gid: 游戏id 骑战三国GID=16
 
 uid：登录后用户id，由登录传给游戏的用户id
