@@ -11,7 +11,7 @@
 
 #### 支付调用方法：
 
-#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id)
+#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job=')
 
     gid: 游戏id
 
@@ -30,10 +30,20 @@
     resource：联系开发人员获取
 
     app_order_id：订单id
+    
+    server_name:不必须，游戏区服名称
+    
+    product_name:不必须，商品名
+    
+    product_desc:不必须，商品描述
+    
+    job:不必须，游戏职业
+    
+    
 
 #### 创角成功调用
 
-#### createRole(uid,server,role,roleId,sname,level)
+#### createRole(uid,server,role,roleId,sname='',level='',job='')
 
     uid:平台用户id，
 
@@ -43,13 +53,15 @@
 
     roleId:游戏角色id,
 
-    sname:游戏区服名称,
+    sname:不必须，游戏区服名称,
 
-    level:角色等级
+    level:不必须，角色等级
+    
+    job:不必须，游戏职业
 
 #### 角色升级调用
 
-#### upgrade(uid,server,role,roleId,sname,level)
+#### upgrade(uid,server,role,roleId,sname='',level='',job='')
 
       uid:平台用户id，
 
@@ -59,19 +71,29 @@
 
       roleId:游戏角色id,
 
-      sname:游戏区服名称,
+      sname:不必须，游戏区服名称,
 
-      level:角色等级
+      level:不必须，角色等级
+      
+      job:不必须，游戏职业
 
 #### 进服数据发送
 
-#### gamelogin(uid,gid,sid,roleid,rolename)
+#### gamelogin(uid,gid,sid,roleid='',rolename='',level='',job='')
 
     uid:平台用户id，
 
     gid 游戏id（骑战三国为16）
 
     sid:区服id
+    
+    roleid:不必须，游戏角色id
+    
+    rolename:不必须，角色名称
+    
+    level:不必须，角色等级
+    
+    job:不必须，游戏职业
 
 #### 微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
 
