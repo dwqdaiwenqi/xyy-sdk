@@ -11,7 +11,7 @@
 
 #### 支付调用方法
 
-#### xyy.loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job=')
+#### xyy.loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job='')
 
     gid: 游戏id
 
