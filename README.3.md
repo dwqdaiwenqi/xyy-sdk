@@ -7,6 +7,19 @@
 <!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.9 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
+
+
+H5 登录游戏验证（登录链接由游戏方提供）
+
+必传参数：
+
+uid : 平台用户id
+
+logintime: 登录时间
+
+token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
+
+
 ### API
 
 #### 支付调用方法
