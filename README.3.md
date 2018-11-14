@@ -23,7 +23,7 @@ token : 验证字符串 md5(uid+'salsjOIUR94wjsdfjlw4j'+logintime)
 ```js
 
 // 如：进服数据发送
-xyy.gamelogin(uid,gid,sid)
+xyy.gamelogin(uid, gid, sid)
 
 ```
 
