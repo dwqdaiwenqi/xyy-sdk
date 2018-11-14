@@ -9,9 +9,9 @@
 ```
 ### API
 
-## 支付调用方法：
+#### 支付调用方法：
 
-## loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
+#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
 
 gid: 游戏id 骑战三国GID=16
 
@@ -31,9 +31,9 @@ resource：联系开发人员获取
 
 app_order_id：订单id
 
-## 创角成功调用
+#### 创角成功调用
 
-## createRole(uid,server,role,roleId,sname,level)
+#### createRole(uid,server,role,roleId,sname,level)
 
 uid:平台用户id，
 
