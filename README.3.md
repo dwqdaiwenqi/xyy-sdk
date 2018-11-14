@@ -29,93 +29,93 @@
 
     resource：联系开发人员获取
 
-  app_order_id：订单id
+    app_order_id：订单id
 
 #### 创角成功调用
 
 #### createRole(uid,server,role,roleId,sname,level)
 
-uid:平台用户id，
+    uid:平台用户id，
 
-server:区服id,
+    server:区服id,
 
-role:角色名称,
+    role:角色名称,
 
-roleId:游戏角色id,
+    roleId:游戏角色id,
 
-sname:游戏区服名称,
+    sname:游戏区服名称,
 
-level:角色等级
+    level:角色等级
 
 #### 角色升级调用
 
 #### upgrade(uid,server,role,roleId,sname,level)
 
-  uid:平台用户id，
+      uid:平台用户id，
 
-  server:区服id,
+      server:区服id,
 
-  role:角色名称,
+      role:角色名称,
 
-  roleId:游戏角色id,
+      roleId:游戏角色id,
 
-  sname:游戏区服名称,
+      sname:游戏区服名称,
 
-  level:角色等级
+      level:角色等级
 
 #### 进服数据发送
 
 #### gamelogin(uid,gid,sid,roleid,rolename)
 
-uid:平台用户id，
+    uid:平台用户id，
 
-gid 游戏id（骑战三国为16）
+    gid 游戏id（骑战三国为16）
 
-sid:区服id
+    sid:区服id
 
 #### 微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
 
 #### sendrole (uid,gid,sid,roleid) 
 
-uid:平台用户id，
+    uid:平台用户id，
 
-gid 游戏id（骑战三国为16）
+    gid 游戏id（骑战三国为16）
 
-sid:区服id
+    sid:区服id
 
-roleid:游戏角色id,
+    roleid:游戏角色id,
 
 #### 聊天发送
 
 #### sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
 
-serverid: 区服id
+    serverid: 区服id
 
-rolename: 角色名称
+    rolename: 角色名称
 
-servername: 游戏区服名称
+    servername: 游戏区服名称
 
-channel: 
+    channel: 
 
-channelname
+    channelname
 
-ouid:
+    ouid:
 
-content:
+    content:
 
-chattype:
+    chattype:
 
-typename:
+    typename:
 
-platid:平台id
+    platid:平台id
 
-gameid:游戏id
+    gameid:游戏id
 
-touserid:
+    touserid:
 
-payamount:
+    payamount:
 
-job:角色职业
+    job:角色职业
 
 
 
