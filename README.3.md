@@ -11,9 +11,9 @@
 
 #### 支付调用方法：
 
-#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource=1378161,app_order_id)
+#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id)
 
-    gid: Number —— 游戏id
+    gid: 游戏id
 
     uid：登录后用户id，由登录传给游戏的用户id
 
@@ -89,34 +89,31 @@
 
 #### sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
 
-    serverid: 区服id
+    serverid: 服务器编号
 
-    rolename: 角色名称
+    rolename: 角色名
 
-    servername: 游戏区服名称
+    servername: 服务器名称
 
-    channel: 
+    channel: 渠道
 
-    channelname
+    channelname: 渠道名称
 
-    ouid:
+    ouid:用户xy平台uid
 
-    content:
+    content:聊天内容
 
-    chattype:
+    chattype:聊天类型
 
-    typename:
+    typename:聊天类型名称
 
     platid:平台id
 
     gameid:游戏id
 
-    touserid:
+    touserid:聊天发送给的uid
 
-    payamount:
+    payamount:玩家累计金额
 
     job:角色职业
-
-
-
 
