@@ -1,6 +1,6 @@
 ## xyy-sdk 1.0.9
 
-游戏方xyy-sdk使用
+游戏方xyy-sdk使用文档
 
 ### 引入
 ```html
@@ -11,7 +11,7 @@
 
 #### 支付调用方法
 
-#### loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job=')
+#### xyy.loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job=')
 
     gid: 游戏id
 
@@ -43,7 +43,7 @@
 
 #### 创角成功调用
 
-#### createRole(uid,server,role,roleId,sname='',level='',job='')
+#### xyy.createRole(uid,server,role,roleId,sname='',level='',job='')
 
     uid:平台用户id，
 
@@ -61,17 +61,17 @@
 
 #### 角色升级调用
 
-#### upgrade(uid,server,role,roleId,sname='',level='',job='')
+#### xyy.upgrade(uid,server,role,roleId,sname='',level='',job='')
 
-      uid:平台用户id，
+      uid:平台用户id
 
-      server:区服id,
+      server:区服id
 
-      role:角色名称,
+      role:角色名称
 
-      roleId:游戏角色id,
+      roleId:游戏角色id
 
-      sname:不必须，游戏区服名称,
+      sname:不必须，游戏区服名称
 
       level:不必须，角色等级
       
@@ -79,7 +79,7 @@
 
 #### 进服数据发送
 
-#### gamelogin(uid,gid,sid,roleid='',rolename='',level='',job='')
+#### xyy.gamelogin(uid,gid,sid,roleid='',rolename='',level='',job='')
 
     uid:平台用户id，
 
@@ -97,7 +97,7 @@
 
 #### 微信分享进游戏后传过来角色信息，分享成功后会调用你方接口
 
-#### sendrole (uid,gid,sid,roleid) 
+#### xyy.sendrole (uid,gid,sid,roleid) 
 
     uid:平台用户id，
 
@@ -109,7 +109,7 @@
 
 #### 聊天发送
 
-#### sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
+#### xyy.sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
 
     serverid: 服务器编号
 
