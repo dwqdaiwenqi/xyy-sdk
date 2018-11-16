@@ -1,10 +1,10 @@
-## xyy-sdk v1.0.11
+## xyy-sdk v1.0.12
 
 游戏方xyy-sdk使用文档
 
 ### 引入
 ```html
-<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.11 -->
+<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.12 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 
@@ -36,7 +36,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 支付调用方法
 
-#### .loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job='')
+#### .loadPayBox(gid,uid,appusername,sid,openuid,porductid,money,resource,app_order_id,server_name='',product_name='',product_desc='',job='',level='')
 
     gid: 游戏id
 
@@ -63,6 +63,8 @@ xyy.upgrade(uid, server, role, roleId)
     product_desc:不必须，商品描述
     
     job:不必须，游戏职业
+    
+    level:不必须，游戏等级
     
     
 
