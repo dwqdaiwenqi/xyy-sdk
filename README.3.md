@@ -1,10 +1,10 @@
-## xyy-sdk v1.0.9
+## xyy-sdk v1.0.10
 
 游戏方xyy-sdk使用文档
 
 ### 引入
 ```html
-<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.9 -->
+<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.10 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 
