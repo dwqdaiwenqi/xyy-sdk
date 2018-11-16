@@ -4,7 +4,7 @@
 
 ### 引入
 ```html
-<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.10 -->
+<!-- 注意xyy-sdk版本 如：xyy-sdk?1.0.11 -->
 <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk.js?{x.y.z}"></script>
 ```
 
