@@ -1,4 +1,4 @@
-## xyy-sdk v1.0.10
+## xyy-sdk v1.0.11
 
 游戏方xyy-sdk使用文档
 
