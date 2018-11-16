@@ -136,7 +136,7 @@ xyy.upgrade(uid, server, role, roleId)
 
 #### 聊天发送
 
-#### .sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job)
+#### .sendchatlog(serverid,rolename,servername,channel,channelname,ouid,content,chattype,typename,platid,gameid,touserid,payamount,job='')
 
     serverid: 服务器编号
 
@@ -164,5 +164,5 @@ xyy.upgrade(uid, server, role, roleId)
 
     payamount:玩家累计金额
 
-    job:角色职业
+    job:不必须，角色职业
 
