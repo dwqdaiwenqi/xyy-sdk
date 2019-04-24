@@ -2,6 +2,10 @@ import base from './base'
 import Event from './event'
 import Brower from './brower'
 
+import RecordRTC from './lib/RecordRTC'
+
+import io from 'socket.io-client'
+
 export default Object.assign(base, {
   userbehavior({data_type, server_id, server_name, game_id, user_id, role_id, role_name, role_level, money, job}={}){
     window.parent.postMessage({
@@ -30,6 +34,7 @@ export default Object.assign(base, {
   }
 
   ,RtcRoom(host,options){
+    
     let mediaStream = null
     let recorder = null
     let socket = null
@@ -82,19 +87,18 @@ export default Object.assign(base, {
             })
 
 
-            xhr(options.uploadfile_url, file, responseText=>{
-              // console.log(responseText)
-            })
-          
-
-            // socket.emit('client->server:uploadfile',{
-            //   buffer:file,
-            //   gameid:options.gameid,
-            //   userid:options.userid
+            // xhr(options.uploadfile_url, file, responseText=>{
+            //   // console.log(responseText)
             // })
+
+            socket.emit('client->server:uploadfile',{
+              buffer:file,
+              gameid:options.gameid,
+              userid:options.userid
+            })
            
             
-            if(mediaStream) mediaStream.stop();
+            if(mediaStream) mediaStream.stop()
             //////////////////////
         }
         
