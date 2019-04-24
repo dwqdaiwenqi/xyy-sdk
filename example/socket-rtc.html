@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>socket rtc!</title>
+</head>
+<body>
+    <script src="../node_modules/recordrtc/RecordRTC.js"> </script>
+    <script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
+
+    <script src="//static.xyimg.net/common/js/jquery-1.8.3.min.js"></script>
+
+<style>
+            html { background-color: #f7f7f7; }
+            body {
+                background-color: white;
+                border: 1px solid rgb(15, 158, 238);
+                /* margin: 1% 35%; */
+                box-sizing: border-box;
+                padding:10px;
+                text-align: center;
+            }
+            hr {
+                border: 0;
+                border-top: 1px solid rgb(15, 158, 238);
+            }
+            a {
+                color: #2844FA;
+                text-decoration: none;
+            }
+            a:hover, a:focus { color: #1B29A4; }
+            a:active { color: #000; }
+            
+            audio, video {
+                border: 1px solid rgb(15, 158, 238); 
+                /* width: 94%; */
+            }
+            button[disabled], input[disabled] { background: rgba(216, 205, 205, 0.2); border: 1px solid rgb(233, 224, 224);}
+        
+</style>
+    <main>
+        <!-- <p><input id="record" type="button" value="record!"></p> -->
+      <section id="room">
+
+
+      </section>
+      
+
+      <section>
+        
+
+        <div>
+            <button id="btn-start-recording">Start Recording</button>
+            <button id="btn-stop-recording">Stop Recording</button>
+        </div>
+
+
+        <section id="rtc-room" ></section>
+        <script>
+         var userid = location.hash.slice(1)
+        </script>
+      </section>
+    </main>
+    <script src="/xyy-sdk/dist/scripts/xyy-sdk-1.3.2.js"></script>
+    <script>
+   
+    // ;(function(){
+    //   const xyy = {}
+    //   xyy.RtcRoom = (host,options)=>{
+    //     let mediaStream = null
+    //     let recorder = null
+    //     let socket = null
+        
+    //     let that = {
+    //       startRecord(){
+    //         // reusable getUserMedia
+    //         var captureUserMedia = (success_callback)=>{
+    //           var session = {
+    //               audio: true
+    //               //video: true
+    //           };
+              
+    //           navigator.getUserMedia(session, success_callback, function(error) {
+    //               alert('Unable to capture your camera. Please check console logs.');
+    //               console.error(error);
+    //           })
+    //         }
+    //         captureUserMedia((stream) =>{
+    //             mediaStream = stream;
+                          
+    //             recorder = RecordRTC(stream, {
+    //               type: 'audio',
+    //               numberOfAudioChannels: 1
+    //             })
+                
+    //             recorder.startRecording()
+    //         })
+    //       },
+    //       stopRecord(){
+    //         function postFiles() {
+    //             var blob = recorder.getBlob();
+    //             ////////////////////
+    //             //getting unique identifier for the file name
+    //             // var fileName = 'fileName-23333' + '.wav'
+                
+    //             // var file = new File([blob], fileName, {
+	// 							// 		// type: 'video/webm'
+	// 							// 		type:'video/wav'
+    //             // })
+    //             var fileName = 'fileName-23333' + '.mp3'
+    //             var file = new File([blob], fileName, {
+    //                 // type: 'video/webm'
+    //                 type:'video/mp3'
+    //             })
+                
+    //             // debugger
+                
+    //             xhr(options.uploadfile_url, file, function(responseText) {
+    //               console.log(responseText)
+    //             })
+                
+    //             if(mediaStream) mediaStream.stop();
+    //             //////////////////////
+    //         }
+            
+    //         // XHR2/FormData
+    //         var xhr = (url, data, callback)=>{
+    //           var request = new XMLHttpRequest();
+    //             request.onreadystatechange = function() {
+    //                 if (request.readyState == 4 && request.status == 200) {
+    //                     callback(request.responseText);
+    //                 }
+    //             }
+                        
+                
+    //             request.open('POST', url)
+    //             var formData = new FormData()
+    //             formData.append('file', data)
+    //             request.send(formData)
+    //         }
+           
+    //         recorder.stopRecording(postFiles)
+    //       },
+    //       onFuc:null,
+    //       on(fns,fuc){
+    //         this.onFuc = fuc
+    //       },
+    //       i(){
+    //         socket = io.connect(host)
+    //         socket.emit("client-server:join",{ userid:options.userid })
+    //         socket.on('server-client:uploadfile',data=>{
+    //             debugger
+    //           this.onFuc(data)
+    //           // console.log(data,'########')
+    //         })
+    //         socket.on('disconnect', () => {
+    //             console.log('you have been disconnected');
+    //         });
+
+    //         socket.on('reconnect', () => {
+    //             console.log('you have been reconnected');
+                
+    //         });
+
+    //         socket.on('reconnect_error', () => {
+    //             console.log('attempt to reconnect has failed');
+    //         });
+
+    //         socket.close()
+
+            
+    //         return this
+    //       }
+    //     }
+    //     return that.i()
+    //   }
+
+    //   {
+
+    //     // /uploadFile/:userid
+    //     //debugger
+    //     let record_room = xyy.RtcRoom('http://localhost:3333',{
+    //       userid,
+    //       uploadfile_url:`http://localhost:3333/uploadFile/${userid}`
+    //     })
+    //     // 玩家们上传了音频并生成了url 
+    //     record_room.on('server-client:uploadfile',data=>{
+    //       console.log('server-client:uploadfile',data)
+    //       $('#rtc-room').append(`<p>${JSON.stringify(data)}</p>`)
+    //     })
+        
+    //     document.querySelector('#btn-start-recording').onclick = ()=>{
+    //       record_room.startRecord()
+    //     }
+    //     document.querySelector('#btn-stop-recording').onclick = ()=>{
+    //       record_room.stopRecord()
+    //     }
+    //   }
+      
+    // })()
+    // ///
+
+
+
+
+    /////////////
+
+
+    // ;(function(){
+    //   const xyy = {}
+    //   xyy.RtcRoom = (host,options)=>{
+    //     let mediaStream = null
+    //     let recorder = null
+    //     let socket = null
+        
+    //     let that = {
+    //       startRecord(){
+    //         // reusable getUserMedia
+    //         var captureUserMedia = (success_callback)=>{
+    //           var session = {
+    //               audio: true
+    //               //video: true
+    //           }
+              
+    //           navigator.getUserMedia(session, success_callback, function(error) {
+    //               alert('Unable to capture your camera. Please check console logs.');
+    //               console.error(error);
+    //           })
+    //         }
+    //         captureUserMedia((stream) =>{
+    //             mediaStream = stream;
+                          
+    //             recorder = RecordRTC(stream, {
+    //               type: 'audio',
+    //               numberOfAudioChannels: 1
+    //             })
+                
+    //             recorder.startRecording()
+    //         })
+    //       },
+    //       stopRecord(){
+    //         function postFiles() {
+    //             var blob = recorder.getBlob();
+    //             ////////////////////
+
+    //             var fileName = 'fileName-23333' + '.mp3'
+    //             var file = new File([blob], fileName, {
+    //                 // type: 'video/webm'
+    //                 type:'video/mp3'
+    //             })
+
+    //             ///xhr
+    //             xhr(options.uploadfile_url, file, function(responseText) {
+    //               console.log(responseText)
+    //             })
+    //             ///socket
+    //             //socket.emit('client-server:uploadFile',{file:file,userid:userid})
+
+    //             if(mediaStream) mediaStream.stop()
+    //             //////////////////////
+    //         }
+            
+    //         // XHR2/FormData
+    //         var xhr = (url, data, callback)=>{
+    //             var request = new XMLHttpRequest()
+    //             request.onreadystatechange = function() {
+    //                 if (request.readyState == 4 && request.status == 200) {
+    //                     callback(request.responseText);
+    //                 }
+    //             }
+
+    //             request.open('POST', url)
+    //             var formData = new FormData()
+    //             formData.append('file', data)
+    //             request.send(formData)
+    //         }
+           
+    //         recorder.stopRecording(postFiles)
+    //       },
+    //       onFuc:null,
+    //       on(fns,fuc){
+    //         this.onFuc = fuc
+    //       },
+    //       i(){
+    //         socket = io.connect(host)
+    //         socket.emit("client-server:join",{ userid:options.userid })
+
+    //         socket.on('server-client:uploadfile',data=>{
+    //           this.onFuc(data)
+    //           // console.log(data,'########')
+    //         })
+            
+    //         socket.on('message233',data=>{
+    //             //console.log(data)
+    //         })
+
+            
+    //         return this
+    //       }
+    //     }
+    //     return that.i()
+    //   }
+
+    //  {
+    //     let record_room = xyy.RtcRoom('172.20.1.41:3333',{
+    //       userid,
+    //       uploadfile_url:`http://172.20.1.41:3333/uploadFile/${userid}`
+    //     })
+    //     // 玩家们上传了音频并生成了url 
+    //     record_room.on('server-client:uploadfile',data=>{
+    //       console.log('server-client:uploadfile',data)
+    //       $('#rtc-room').append(`<p>${JSON.stringify(data)}</p>`)
+    //     })
+        
+    //     document.querySelector('#btn-start-recording').onclick = ()=>{
+    //       record_room.startRecord()
+    //     }
+    //     document.querySelector('#btn-stop-recording').onclick = ()=>{
+    //       record_room.stopRecord()
+    //     }
+    //   }
+      
+   // })()
+    ///
+
+    // {
+    //     let xhr = new XMLHttpRequest
+    //     xhr.onload = ()=>{
+    //         console.log(xhr.responseText)
+    //     }
+    //     xhr.open('GET','http://localhost:3333/apia')
+    //     xhr.send(null)
+    // }
+    // {
+    //     let xhr = new XMLHttpRequest
+    //     xhr.onload = ()=>{
+    //         console.log(xhr.responseText)
+    //     }
+    //     xhr.open('POST','http://localhost:3333/apib')
+    //     xhr.send(null)
+    // }
+
+    // {
+    //     let request = new XMLHttpRequest
+    //     request.onload = ()=>{
+    //         console.log(xhr.responseText)
+    //     }
+    //     request.open('POST', 'http://localhost:3333/apib')
+    //     var formData = new FormData()
+    //     formData.append('file', 'dddxxx')
+    //     request.send(formData)
+    // }
+    
+        
+    // var socket = io('172.20.1.41:3333')
+
+    // socket.on('message-ovo',data=>{
+    //     console.log('###',data)
+    // })
+
+    </script>
+</body>
