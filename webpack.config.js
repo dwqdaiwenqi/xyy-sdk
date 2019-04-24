@@ -1,27 +1,29 @@
 var webpack = require("webpack");
 var path = require("path");
 
-const ENV = process.env.npm_lifecycle_event;
+const ENV = process.env.npm_lifecycle_event
+const pkg = require('./package.json')
 
 module.exports = {
   entry:  './src/main.js',
-  devtool: '#source-map',
+  devtool: ENV==='dev'?'#source-map':'',
   output: { 
     path: __dirname+'/dist/'
-    ,filename: ENV==='dev'?'scripts/xyy-sdk.js':'scripts/xyy-sdk.min.js'
+    ,filename: ENV==='dev'?`scripts/xyy-sdk-${pkg.version}.js`:`scripts/xyy-sdk-${pkg.version}.min.js`
     ,library: 'xyy'
     ,libraryTarget: 'umd' 
+    ,libraryExport: 'default'
   },
-
+  
   module: {
     rules: [
       {    
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
         // query: {
-        //  // presets: ['env', 'stage-0','react'],
-        //  // plugins: ['transform-decorators-legacy']
+        //   presets: ['env', 'stage-1'],
+        //   plugins: ['transform-runtime']
         // }   
       },
       {
