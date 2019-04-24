@@ -40,6 +40,7 @@ export default Object.assign(base, {
     
     let that = {
       startRecord(){
+        //debugger
         // reusable getUserMedia
         var captureUserMedia = (success_callback)=>{
           var session = {
@@ -76,15 +77,22 @@ export default Object.assign(base, {
             // })
             var fileName = 'fileName-23333' + '.mp3'
             var file = new File([blob], fileName, {
-                // type: 'video/webm'
-                type:'video/mp3'
+              // type: 'video/webm'
+              type:'video/mp3'
             })
-            
-            // debugger
-            
-            xhr(options.uploadfile_url, file, function(responseText) {
-              console.log(responseText)
+
+
+            xhr(options.uploadfile_url, file, responseText=>{
+              // console.log(responseText)
             })
+          
+
+            // socket.emit('client->server:uploadfile',{
+            //   buffer:file,
+            //   gameid:options.gameid,
+            //   userid:options.userid
+            // })
+           
             
             if(mediaStream) mediaStream.stop();
             //////////////////////
@@ -104,7 +112,7 @@ export default Object.assign(base, {
             formData.append('file', data)
             request.send(formData)
         }
-        
+        // debugger
         recorder.stopRecording(postFiles)
       },
       onFuc:null,
@@ -122,13 +130,14 @@ export default Object.assign(base, {
         })
 
 
-        socket.emit("client-server:join",{ userid:options.userid })
-        socket.on('server-client:uploadfile',data=>{
+        socket.emit('client->server:join',{ userid:options.userid })
+        socket.on('server->client:uploadfile',data=>{
           if(data.gameid==options.gameid){
             this.onFuc(data)
           }
           // console.log(data,'########')
         })
+
         socket.on('disconnect', () => {
             console.log('you have been disconnected')
         })
@@ -160,7 +169,6 @@ export default Object.assign(base, {
           top: 5px;
           right: 5px;
         }
-
         .online-service-back-button {
             background-color: #1d64c1;
             color: white;
@@ -168,7 +176,6 @@ export default Object.assign(base, {
             border: none;
             padding: 5px;
         }
-
         #online-service {
             display: none;
             z-index: 2000;
@@ -283,5 +290,3 @@ export default Object.assign(base, {
   ,Brower
 
 })
-
-
