@@ -1,5 +1,6 @@
 
 
+
 const express = require('express')
 const app = express()
 
@@ -26,7 +27,6 @@ var accessLogStream = FileStreamRotator.getStream({
   verbose: false
 })
 
-
 // setup the logger
 app.use(morgan('combined', {stream: accessLogStream}))
 
@@ -37,7 +37,7 @@ server.listen(port,()=>{
 
 const io = require('socket.io')(server)
 const redisAdapter = require('socket.io-redis')
-// io.adapter(redisAdapter({ host: 'localhost', port: 6379 }))
+// io.adapter(redisAdapter({ host: 'localhost', port: 6379 })
 
 // const pub = redis.createClient('localhost', 6379, { auth_pass: '123456' })
 // const sub = redis.createClient('localhost', 6379, { auth_pass: '123456' })
@@ -87,6 +87,7 @@ io.on('connection',(socket)=>{
 		const file_ext = 'mp3'
 		const file_name = `upload_${Date.now()}`
 
+
 		fs.writeFile(__dirname + dir+  file_name+'.'+file_ext, buffer, err=>{
 			if(err){
 				console.log(err)
@@ -108,6 +109,8 @@ io.on('connection',(socket)=>{
 	})
 	
 })
+
+
 
 
 
