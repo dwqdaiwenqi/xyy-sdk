@@ -1,10 +1,8 @@
 import base from './base'
 import Event from './event'
 import Brower from './brower'
+import h5Record from './h5record'
 
-import RecordRTC from './lib/RecordRTC'
-
-import io from 'socket.io-client'
 
 export default Object.assign(base, {
   userbehavior({data_type, server_id, server_name, game_id, user_id, role_id, role_name, role_level, money, job}={}){
@@ -12,9 +10,7 @@ export default Object.assign(base, {
       cmd:'userbehavior'
       ,data_type, server_id, server_name, game_id, user_id, role_id, role_name, role_level, money, job
     }, '*')
-
   }
-
   ,payiframeclose(){
     window.parent.postMessage({
       cmd:'payiframeclose'
@@ -33,133 +29,7 @@ export default Object.assign(base, {
     })
   }
 
-  ,RtcRoom(host,options){
-    
-    let mediaStream = null
-    let recorder = null
-    let socket = null
-
-    options = Object.assign({},options,{
-      uploadfile_url:`http://172.20.1.41:3333/uploadFile/${options.gameid}/${options.userid}`
-    })
-    
-    let that = {
-      startRecord(){
-        //debugger
-        // reusable getUserMedia
-        var captureUserMedia = (success_callback)=>{
-          var session = {
-              audio: true
-              //video: true
-          }
-          
-          navigator.getUserMedia(session, success_callback, function(error) {
-              alert('Unable to capture your camera. Please check console logs.')
-              console.error(error);
-          })
-        }
-        captureUserMedia((stream) =>{
-            mediaStream = stream
-                      
-            recorder = RecordRTC(stream, {
-              type: 'audio',
-              numberOfAudioChannels: 1
-            })
-            
-            recorder.startRecording()
-        })
-      },
-      stopRecord(){
-        function postFiles() {
-            var blob = recorder.getBlob();
-            ////////////////////
-            //getting unique identifier for the file name
-            // var fileName = 'fileName-23333' + '.wav'
-            
-            // var file = new File([blob], fileName, {
-            // 		// type: 'video/webm'
-            // 		type:'video/wav'
-            // })
-            var fileName = 'fileName-23333' + '.mp3'
-            var file = new File([blob], fileName, {
-              // type: 'video/webm'
-              type:'video/mp3'
-            })
-
-
-            // xhr(options.uploadfile_url, file, responseText=>{
-            //   // console.log(responseText)
-            // })
-
-            socket.emit('client->server:uploadfile',{
-              buffer:file,
-              gameid:options.gameid,
-              userid:options.userid
-            })
-           
-            
-            if(mediaStream) mediaStream.stop()
-            //////////////////////
-        }
-        
-        // XHR2/FormData
-        var xhr = (url, data, callback)=>{
-          var request = new XMLHttpRequest()
-            request.onreadystatechange = ()=> {
-                if (request.readyState == 4 && request.status == 200) {
-                    callback(request.responseText)
-                }
-            }                  
-            
-            request.open('POST', url)
-            var formData = new FormData()
-            formData.append('file', data)
-            request.send(formData)
-        }
-        // debugger
-        recorder.stopRecording(postFiles)
-      },
-      onFuc:null,
-      on(fns,fuc){
-        this.onFuc = fuc
-      },
-      i(){
-        ////socket.close()
-
-        console.log(`connect host:${host}`)
-
-        socket = io.connect(host)
-        socket.on('message-ovo',data=>{
-          console.log('###',data)
-        })
-
-
-        socket.emit('client->server:join',{ userid:options.userid })
-        socket.on('server->client:uploadfile',data=>{
-          if(data.gameid==options.gameid){
-            this.onFuc(data)
-          }
-          // console.log(data,'########')
-        })
-
-        socket.on('disconnect', () => {
-            console.log('you have been disconnected')
-        })
-
-        socket.on('reconnect', () => {
-            console.log('you have been reconnected')
-            
-        })
-
-        socket.on('reconnect_error', () => {
-            console.log('attempt to reconnect has failed')
-        })
-        
-        return this
-      }
-    }
-    return that.i()
-  }
+  
   // ,onLineService({"roleId":123,"roleName":"abc","roleLevel": 22, "serverId":1,"vipLevel":1,"serverName":"测试1服"}){
   ,onLineServicePanel({uid,gid,sid,rolename,roleid}={},$parent=document.body){
     let $d = document.createElement('div')
@@ -292,5 +162,5 @@ export default Object.assign(base, {
   ,version : __VERSION__
   ,ev: new Event()
   ,Brower
-
+  ,...h5Record
 })
