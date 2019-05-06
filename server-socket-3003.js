@@ -1,6 +1,5 @@
 
 
-
 const express = require('express')
 const app = express()
 
@@ -45,6 +44,16 @@ const redisAdapter = require('socket.io-redis')
 io.adapter(redisAdapter({host:'localhost',port:6379, auth_pass:'123456'}))
 
 
+var adapterRoomid = ({roomid}={})=>{
+	let map_room = require('./rooms.json')
+
+	let roomid_ = map_room[roomid]
+	
+	if(!roomid_) console.log(`不存在的roomid${roomid}`)
+	console.log(`${roomid}>>>${roomid_}`)
+	return roomid_
+}
+
 io.on('connection',(socket)=>{
 
 	//client->server:join
@@ -54,8 +63,19 @@ io.on('connection',(socket)=>{
 		// 	userid: data.userid
 		// })
 		socket.userid = data.userid
-		io.emit('server->client:join',{userid:data.userid})
+		
+		let roomid_
+
+		if(roomid_ = adapterRoomid({roomid:data.sid})){
+			socket.roomid = roomid_
+			socket.join(  socket.roomid  )
+
+			io.to(socket.roomid).emit('server->client:join',{userid:data.userid,roomid:data.roomid_})
+
+		}
+
 	})
+
 
   // when the user disconnects.. perform this
 	socket.on('disconnect', () => {
@@ -64,7 +84,9 @@ io.on('connection',(socket)=>{
 		// 	username: socket.username,
 			
 		// })
-		io.emit('server->client:disconnect',{userid:socket.userid})
+		if(typeof socket.roomid!='undefined'){
+			io.to(socket.roomid).emit('server->client:disconnect',{userid:socket.userid})
+		}
 	})
 
 	//socket
@@ -72,6 +94,12 @@ io.on('connection',(socket)=>{
 
 		//console.log(data)
 		// return 
+
+		if(typeof socket.roomid == 'undefined'){
+
+			return console.log('非法uploadfile！')
+
+		}
 			
 		var { buffer,userid, gameid } = data
 
@@ -93,24 +121,28 @@ io.on('connection',(socket)=>{
 				console.log(err)
 				return
 			}
+
+
 			// https://172.20.1.41:7878/19/nodejs-cluster-redis/#userid-a
 
 			const fileURL = '//172.20.1.41:7878' + '/xyy-sdk/uploads/' + file_name+'.'+file_ext
 
+			//  static.xy.com
+
 			//console.log('fileUrl:',fileURL)
-			io.emit('server->client:uploadfile',{
+			io.to(socket.roomid).emit('server->client:uploadfile',{
 				userid,
 				fileURL,
 				gameid,
+				roomid:socket.roomid,
 				server_port:port
 			})
+
 		})
 
 	})
 	
 })
-
-
 
 
 
