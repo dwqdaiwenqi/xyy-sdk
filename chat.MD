@@ -27,8 +27,8 @@ rtcroom.onuploadFile(data=&gt;{
 
 //用户加入聊天，传入sid和userid
 let user = rtcroom.join({userid:'userid',sid:'sid'})
-user.startRecord() //开始录制
-user.stopRecord() //结束录制
+user.startRecord() //开始录制，通常会询问浏览器是开启录音权限
+user.stopRecord() //结束录制，用户触发onuploadfile
 ///////////
 			
  ```
