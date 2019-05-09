@@ -1,8 +1,9 @@
 ### xyy-sdk语音聊天室对接
 
  ```html
-//引入xyy-sdk
- <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-1.5.2.js"></scritp>
+//分别引入xyy-sdk和xyy-sdk-h5record
+ <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-1.3.2.js"></scritp>
+ <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-h5record-1.0.0.js"></scritp>
  ```
  
  ```js
@@ -11,10 +12,10 @@
  //userid(用户id)
  //sid(区服id)
  
+//建立socket链接
 let rtcroom = xyy.RTCRoom(`https://ws-hjqj.app.xy.com`,{gameid:'gameid'})
-//监听了所有玩家录音后生成的mp3链接
 
-
+//监听所有玩家录音后生成的mp3链接
 ////////////////↓↓↓↓↓↓↓↓↓↓↓↓/////////////////
 //在这里进行其他相关处理
 rtcroom.onuploadFile(data=&gt;{
@@ -24,7 +25,7 @@ rtcroom.onuploadFile(data=&gt;{
 		
 })
 
-//用户加入，传入sid和userid
+//用户加入聊天，传入sid和userid
 let user = rtcroom.join({userid:'userid',sid:'sid'})
 user.startRecord() //开始录制
 user.stopRecord() //结束录制
