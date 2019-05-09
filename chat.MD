@@ -1,11 +1,13 @@
 ### xyy-sdk语音聊天室对接
 
+#### 引入
  ```html
 //分别引入xyy-sdk和xyy-sdk-h5record
  <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-1.3.2.js"></scritp>
  <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-h5record-1.0.0.js"></script>
  ```
  
+ #### 使用
  ```js
  //////////使用
  //gameid(游戏id)
