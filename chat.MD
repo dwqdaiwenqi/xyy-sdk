@@ -1,5 +1,5 @@
 ### xyy-sdk语音聊天室对接
-
+目前测试兼容到安卓6.0 +
 #### 引入
  ```html
 //分别引入xyy-sdk和xyy-sdk-h5record
