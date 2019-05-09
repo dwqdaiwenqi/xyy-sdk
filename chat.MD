@@ -3,7 +3,7 @@
  ```html
 //分别引入xyy-sdk和xyy-sdk-h5record
  <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-1.3.2.js"></scritp>
- <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-h5record-1.0.0.js"></scritp>
+ <script src="//static.xyimg.net/cn/static/h5/js/xyy-sdk-h5record-1.0.0.js"></script>
  ```
  
  ```js
