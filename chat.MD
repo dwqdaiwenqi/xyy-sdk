@@ -18,7 +18,7 @@ let rtcroom = xyy.RTCRoom(`https://ws-hjqj.app.xy.com`,{gameid:'gameid'})
 ////////////////↓↓↓↓↓↓↓↓↓↓↓↓/////////////////
 //在这里进行其他相关处理
 rtcroom.onuploadFile(data=&gt;{
-	//{userid,fileURL,gameid,server_port}
+	//{userid,fileURL,gameid}
 	//fileURL mp3连接
 	//userid 用户id
 		
