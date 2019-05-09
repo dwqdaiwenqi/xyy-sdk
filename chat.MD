@@ -1,4 +1,4 @@
-rtc聊天室对接
+### xyy-sdk语音聊天室对接
 
  ```html
 //引入xyy-sdk
