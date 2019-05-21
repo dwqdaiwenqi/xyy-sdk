@@ -11,8 +11,6 @@
  ```js
  //////////使用
  //gameid(游戏id)
- //userid(用户id)
- //sid(区服id)
  
 //建立socket链接
 let rtcroom = xyy.RTCRoom(`https://ws-hjqj.app.xy.com`,{gameid:'gameid'})
@@ -27,8 +25,33 @@ rtcroom.onuploadFile(data=&gt;{
 		
 })
 
-//用户加入聊天，传入sid和userid
-let user = rtcroom.join({userid:'userid',sid:'sid'})
+//用户加入聊天
+serverid： 服务器编号 string
+rolename: 角色名, string
+servername: 服务器名称, string
+channel: 渠道, string
+channelname: 渠道名称, string
+ouid: 用户xy平台uid, string
+content: 聊天内容, string
+chattype: 聊天类型, string
+typename: 聊天类型名称, string
+platid: 平台id, string
+gameid: 游戏id, string
+touserid: 聊天发送给的uid, string
+let user = rtcroom.join({
+	userid:'userid',  // 用户id
+	serverid:'serverid',  //  区服id
+	rolename:'rolename-a', // 角色名, string
+	servername:'servername-a', // 服务器名称, string
+	channel:'channel-a', // 渠道, string
+	channelname:'channelname-a', // 渠道名称, string
+	ouid:'ouid-a', // 用户xy平台uid, string
+	chattype:'chattype-a', // 聊天类型, string
+	typename: 'typename-a-'+(Math.random()*10000|0), // 聊天类型名称, string
+	platid:'platid-a', // 平台id, string
+	gameid:'gameid-a', // 游戏id, string
+	touserid:'touserid-a' // 聊天发送给的uid, string
+})
 user.startRecord() //开始录制，通常会询问浏览器开启录音权限
 user.stopRecord() //结束录制，用户触发onuploadfile
 ///////////
