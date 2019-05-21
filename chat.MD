@@ -9,16 +9,16 @@
  
  #### 使用
  ```js
- //////////使用
- //gameid(游戏id)
- 
+ //////////使用 
 //建立socket链接
-let rtcroom = xyy.RTCRoom(`https://ws-hjqj.app.xy.com`,{gameid:'gameid'})
+let rtcroom = xyy.RTCRoom(`https://ws-hjqj.app.xy.com`,{
+	gameid:'gameid' // gameid 游戏id
+})
 
 //监听所有玩家录音后生成的mp3链接
 ////////////////↓↓↓↓↓↓↓↓↓↓↓↓/////////////////
 //在这里进行其他相关处理
-rtcroom.onuploadFile(data=&gt;{
+rtcroom.onuploadFile(data=>{
 	//{userid,fileURL,gameid}
 	//fileURL mp3连接
 	//userid 用户id
