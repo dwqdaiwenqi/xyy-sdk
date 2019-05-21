@@ -26,18 +26,6 @@ rtcroom.onuploadFile(data=&gt;{
 })
 
 //用户加入聊天
-serverid： 服务器编号 string
-rolename: 角色名, string
-servername: 服务器名称, string
-channel: 渠道, string
-channelname: 渠道名称, string
-ouid: 用户xy平台uid, string
-content: 聊天内容, string
-chattype: 聊天类型, string
-typename: 聊天类型名称, string
-platid: 平台id, string
-gameid: 游戏id, string
-touserid: 聊天发送给的uid, string
 let user = rtcroom.join({
 	userid:'userid',  // 用户id
 	serverid:'serverid',  //  区服id
