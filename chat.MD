@@ -27,6 +27,7 @@ rtcroom.onuploadFile(data=>{
 /////////////////////////////////////////////
 
 ///////////用户加入聊天///////////
+//内部进行了语音聊天监控，所以其他相关参数也需要传递进去
 let user = rtcroom.join({
 	userid:'userid',  // 用户id
 	serverid:'serverid',  //  区服id
