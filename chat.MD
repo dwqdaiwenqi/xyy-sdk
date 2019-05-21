@@ -24,8 +24,9 @@ rtcroom.onuploadFile(data=&gt;{
 	//userid 用户id
 		
 })
+/////////////////////////////////////////////
 
-//用户加入聊天
+///////////用户加入聊天///////////
 let user = rtcroom.join({
 	userid:'userid',  // 用户id
 	serverid:'serverid',  //  区服id
@@ -42,6 +43,6 @@ let user = rtcroom.join({
 })
 user.startRecord() //开始录制，通常会询问浏览器开启录音权限
 user.stopRecord() //结束录制，用户触发onuploadfile
-///////////
+//////////////////////////////
 			
  ```
