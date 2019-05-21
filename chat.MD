@@ -37,7 +37,7 @@ let user = rtcroom.join({
 	channelname:'channelname-a', // 渠道名称, string
 	ouid:'ouid-a', // 用户xy平台uid, string
 	chattype:'chattype-a', // 聊天类型, string
-	typename: 'typename-a-'+(Math.random()*10000|0), // 聊天类型名称, string
+	typename: 'typename-a-', // 聊天类型名称, string
 	platid:'platid-a', // 平台id, string
 	gameid:'gameid-a', // 游戏id, string
 	touserid:'touserid-a' // 聊天发送给的uid, string
