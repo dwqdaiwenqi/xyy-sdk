@@ -8,8 +8,8 @@ sdk.time = null;
 sdk.username = null;
 sdk.isFocus = false;
 sdk.uswx = false;
-sdk.wxappId = ''
-
+sdk.wxappId = ''   
+   
 
 sdk.isWeixin = function() {
     return navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger"
