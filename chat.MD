@@ -22,6 +22,8 @@ rtcroom.onuploadFile(data=>{
 	//{userid,fileURL,gameid}
 	//fileURL mp3连接
 	//userid 用户id
+	//aa
+	//bb
 		
 })
 /////////////////////////////////////////////
@@ -40,7 +42,14 @@ let user = rtcroom.join({
 	typename: 'typename-a-', // 聊天类型名称, string
 	platid:'platid-a', // 平台id, string
 	gameid:'gameid-a', // 游戏id, string
-	touserid:'touserid-a' // 聊天发送给的uid, string
+	touserid:'touserid-a', // 聊天发送给的uid, string
+	
+	
+	//下方传递了其他需要的参数，参数名自定义
+	//如：aaa,bbb（不要与上方的参数名重复）
+	aa:'aa',
+	bb:'bb'
+	
 })
 user.startRecord() //开始录制，通常会询问浏览器开启录音权限
 user.stopRecord() //结束录制，用户触发onuploadfile
