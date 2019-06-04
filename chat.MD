@@ -42,7 +42,7 @@ let user = rtcroom.join({
 	typename: 'typename-a-', // 聊天类型名称, string
 	platid:'platid-a', // 平台id, string
 	gameid:'gameid-a', // 游戏id, string
-	touserid:'touserid-a', // 聊天发送给的uid, string
+	touserid:'', // 聊天发送给的uid, string
 	
 	
 	//下方传递了其他需要的参数，参数名自定义
