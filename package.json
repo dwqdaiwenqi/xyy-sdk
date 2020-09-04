@@ -12,7 +12,7 @@
   "author": "Yohane",
   "license": "ISC",
   "dependencies": {
-    "marked": "^0.5.0"
+    "marked": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
